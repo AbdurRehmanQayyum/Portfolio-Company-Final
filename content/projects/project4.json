@@ -1,0 +1,9 @@
+{
+  "priority": 4,
+  "title": "FinTech Analytics",
+  "shortDescription": "A sophisticated data analytics dashboard for financial institutions to visualize market trends in real-time.",
+  "cover": "https://images.unsplash.com/photo-1527334919515-b8dee906a34b?q=80&w=2070&auto=format&fit=crop",
+  "livePreview": "https://example.com/fintech-analytics",
+  "type": "FinTech",
+  "siteAge": "Stable Version"
+}

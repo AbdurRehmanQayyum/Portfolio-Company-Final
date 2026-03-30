@@ -1,0 +1,9 @@
+{
+  "priority": 1,
+  "title": "Enterprise Solution X",
+  "shortDescription": "A comprehensive ERP system designed for large-scale enterprises to streamline operations and enhance productivity.",
+  "cover": "https://images.unsplash.com/photo-1585282263861-f55e341878f8?q=80&w=2070&auto=format&fit=crop",
+  "livePreview": "https://example.com/enterprise-x",
+  "type": "Corporate Project",
+  "siteAge": "Recent Launch"
+}
