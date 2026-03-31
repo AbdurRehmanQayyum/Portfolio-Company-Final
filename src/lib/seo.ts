@@ -1,6 +1,24 @@
 import type { Metadata } from 'next'
 
-export const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://bestuniversalsolutions.com')
+const parseSiteUrl = (value?: string) => {
+  if (!value) {
+    return null
+  }
+
+  const normalizedValue = value.startsWith('http://') || value.startsWith('https://') ? value : `https://${value}`
+
+  try {
+    return new URL(normalizedValue)
+  } catch {
+    return null
+  }
+}
+
+export const siteUrl =
+  parseSiteUrl(process.env.NEXT_PUBLIC_SITE_URL) ||
+  parseSiteUrl(process.env.VERCEL_PROJECT_PRODUCTION_URL) ||
+  parseSiteUrl(process.env.VERCEL_URL) ||
+  new URL('http://localhost:3000')
 
 export const siteConfig = {
   name: 'Best Universal Solutions',
