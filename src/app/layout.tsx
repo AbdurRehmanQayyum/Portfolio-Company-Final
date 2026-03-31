@@ -4,7 +4,7 @@ import './globals.css'
 import JsonLd from '@/components/SEO/JsonLd'
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
-import ThemeMenu from '@/components/Theme/ThemeMenu'
+import BackToTopButton from '@/components/UI/BackToTopButton'
 import {
   absoluteUrl,
   bingVerification,
@@ -118,7 +118,7 @@ export default function RootLayout({
           <Navbar />
         </header>
         {children}
-        <ThemeMenu />
+        <BackToTopButton />
         <Footer />
       </body>
     </html>

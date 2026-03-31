@@ -5,7 +5,11 @@ import useOutsideClick from '@/hooks/useOutsideClick'
 import { CheckIcon, CloseIcon } from '@/utils/icons'
 import { useEffect, useState } from 'react'
 
-const ThemeMenu = () => {
+interface ThemeMenuProps {
+  variant?: 'floating' | 'navbar'
+}
+
+const ThemeMenu = ({ variant = 'floating' }: ThemeMenuProps) => {
   const [theme, setTheme] = useState('dark')
   const [showThemeMenu, setShowThemeMenu] = useState(false)
   const menuRef = useOutsideClick(() => setShowThemeMenu(false))
@@ -29,11 +33,17 @@ const ThemeMenu = () => {
     }
   }
 
+  const isNavbar = variant === 'navbar'
+
   return (
-    <div ref={menuRef} className="fixed right-6 bottom-4 z-50 md:right-11 md:bottom-11">
+    <div
+      ref={menuRef}
+      className={
+        isNavbar ? 'relative flex h-full items-center' : 'fixed right-6 bottom-4 z-50 md:right-11 md:bottom-11'
+      }>
       <div
         onClick={() => setShowThemeMenu(!showThemeMenu)}
-        className="bg-neutral cursor-pointer rounded-full p-1.5 md:p-2">
+        className={`bg-neutral cursor-pointer rounded-full p-1.5 md:p-2 ${isNavbar ? 'my-auto' : ''}`}>
         <div className="bg-primary grid grid-cols-2 place-content-center gap-0.5 rounded-full p-1.5 md:p-2">
           <div className="size-[7px] rounded-t-full rounded-bl-full bg-[#B13753] md:size-[10px]"></div>
           <div className="size-[7px] rounded-t-full rounded-br-full bg-[#BAA32B] md:size-[10px]"></div>
@@ -43,7 +53,10 @@ const ThemeMenu = () => {
       </div>
 
       {showThemeMenu && (
-        <div className="bg-secondary animate-fade-in border-border absolute right-0 bottom-full mb-5 space-y-3 rounded-xl border p-3 md:space-y-4 md:p-5">
+        <div
+          className={`bg-secondary animate-fade-in border-border absolute right-0 z-20 space-y-3 rounded-xl border p-3 md:space-y-4 md:p-5 ${
+            isNavbar ? 'top-full mt-4' : 'bottom-full mb-5'
+          }`}>
           <div className="text-primary-content border-border flex items-center justify-between border-b pb-3 md:pb-4">
             <span className="text-sm md:text-base">_select-theme</span>
             <CloseIcon
