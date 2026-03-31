@@ -65,14 +65,14 @@ const Footer = () => {
               <a
                 href="tel:+1 800 123 4567"
                 className="text-tertiary-content hover:text-neutral text-sm font-light transition-colors duration-300">
-                +1 800 123 4567
+                +92 328613305
               </a>
             </div>
             <div>
               <h3 className="text-neutral mb-4 text-lg font-medium">Location</h3>
               <address className="text-tertiary-content flex flex-col text-sm font-light">
                 <span>123 Tech Avenue</span>
-                <span>Silicon Valley, CA, USA</span>
+                <span>Hallroad, Lahore, Pakistan</span>
               </address>
             </div>
           </div>
