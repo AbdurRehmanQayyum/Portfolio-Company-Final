@@ -31,7 +31,7 @@ const ThemeMenu = ({ variant = 'floating' }: ThemeMenuProps) => {
       setTheme(theme)
       localStorage.setItem('theme', theme)
     }
-  }
+  
 
   const isNavbar = variant === 'navbar'
 
